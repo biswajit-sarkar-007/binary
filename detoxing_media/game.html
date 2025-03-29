@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Detox - User Panel</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+    <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+    <div class="dashboard">
+        <!-- Left Sidebar: User Profile & Daily Missions -->
+        <div class="sidebar">
+            <div class="profile">
+                <input type="file" id="file-upload" accept="image/*">
+                <img src="user-avatar1.png" alt="User Avatar" class="avatar" id="profile-image">
+                <h2 class="username" contenteditable="true">Enter Name</h2>
+                <div class="para">
+                    <p class="level">Level: <span id="user-level">0</span></p>
+                    <p class="days">Days Active: <span id="days-count">1</span></p>
+                </div>
+            </div>
+
+            <!-- Daily Missions -->
+            <div class="daily-quests">
+                <h3 style="color: yellow;">Daily Missions</h3>
+                <ul id="quest-list">
+                    <!-- Dynamic quests added here -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Sidebar: World Ranking -->
+        <div class="world-ranking">
+            <h3>🌎 World Ranking</h3>
+            <div id="ranking-list">
+                <div class="rank">
+                    <span class="rank-number">1</span>
+                    <img src="images.jpg" class="rank-avatar" alt="Avatar">
+                    <span class="rank-name">Player1</span>
+                    <span class="rank-level"> &nbsp;Lvl 25</span>
+                </div>
+                <div class="rank">
+                    <span class="rank-number">2</span>
+                    <img src="images.png" class="rank-avatar" alt="Avatar">
+                    <span class="rank-name">Player2</span>
+                    <span class="rank-level">&nbsp; Lvl 22</span>
+                </div>
+                <div class="rank">
+                    <span class="rank-number">3</span>
+                    <img src="users-vector-icon-png_260862.jpg" class="rank-avatar" alt="Avatar">
+                    <span class="rank-name">Player3</span>
+                    <span class="rank-level">&nbsp; Lvl 20</span>
+                </div>
+                <div class="rank">
+                    <span class="rank-number">4</span>
+                    <img src="png-transparent-computer-icons-avatar-user-avatar-heroes-woman-silhouette.png" class="rank-avatar" alt="Avatar">
+                    <span class="rank-name">Player4</span>
+                    <span class="rank-level"> &nbsp;Lvl 18</span>
+                </div>
+                <div class="rank">
+                    <span class="rank-number">5</span>
+                    <img src="png-clipart-computer-icons-user-profile-avatar-heroes-head.png" class="rank-avatar" alt="Avatar">
+                    <span class="rank-name">Player5</span>
+                    <span class="rank-level">&nbsp; Lvl 16</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommended Detox Games Section -->
+        <div class="detox-games">
+            <h3>🎮 Recommended Detox Games</h3>
+            <div class="game">
+                <h4>🌳 Forest</h4>
+                <p>Grow a virtual tree by staying off your phone. Stay focused and build a forest!</p>
+                <a href="https://www.forestapp.cc/" target="_blank">Try Forest</a>
+            </div>
+            <div class="game">
+                <h4>⏸️ PAUSE</h4>
+                <p>A mindfulness game that helps you relax and stay present.</p>
+                <a href="back.html">Try PAUSE</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+
+    <!-- Your main JS file -->
+    <script src="script.js"></script>
+</body>
+</html>
