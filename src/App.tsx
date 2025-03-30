@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Brain, BrainCog , Moon, Clock, Users, Activity, Sparkles, Menu, X, ArrowRight, MessageSquare, Heart, Shield, Mail, Phone, MapPin } from 'lucide-react';
+import {  BrainCircuit, BrainCog , Moon, Clock, Users, Activity, Sparkles, Menu, X, ArrowRight, MessageSquare, Heart, Shield, Mail, Phone, MapPin } from 'lucide-react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 
 import AIPoweredStressTracking from './components/features/AIPoweredStressTracking';
@@ -59,7 +59,7 @@ function NavBar() {
   <div className="flex justify-between h-16">
     <div className="flex items-center">
       <Link to="/" className="flex items-center group">
-        <Brain className="h-8 w-8 text-indigo-600 transition-transform duration-300 group-hover:scale-110" />
+        <BrainCircuit className="h-8 w-8 text-indigo-600 transition-transform duration-300 group-hover:scale-110" />
         <span className="ml-2 text-xl font-bold text-gray-900 transition-transform duration-300 group-hover:scale-110">
           MindfulStudent
         </span>
@@ -515,7 +515,7 @@ function Home() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center mb-4">
-                <Brain className="h-8 w-8 text-indigo-400" />
+                <BrainCircuit className="h-8 w-8 text-indigo-400" />
                 <span className="ml-2 text-xl font-bold">MindfulStudent</span>
               </div>
               <p className="text-gray-400">
