@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Brain, Moon, Clock, Users, Activity, Sparkles, Menu, X, ArrowRight, MessageSquare, Heart, Shield, Mail, Phone, MapPin } from 'lucide-react';
+import { Brain, BrainCog , Moon, Clock, Users, Activity, Sparkles, Menu, X, ArrowRight, MessageSquare, Heart, Shield, Mail, Phone, MapPin } from 'lucide-react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 
 import AIPoweredStressTracking from './components/features/AIPoweredStressTracking';
@@ -14,6 +14,7 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  
 
   const scrollToSection = (sectionId: string) => {
     // If we're not on the home page, navigate to home first
@@ -54,50 +55,100 @@ function NavBar() {
 
   return (
     <nav className="bg-white shadow-sm fixed w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center">
-              <Brain className="h-8 w-8 text-indigo-600" />
-              <span className="ml-2 text-xl font-bold text-gray-900">MindfulStudent</span>
-            </Link>
-          </div>
-          <div className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('features')} className="text-gray-600 hover:text-indigo-600">Features</button>
-            <button onClick={() => scrollToSection('how-it-works')} className="text-gray-600 hover:text-indigo-600">How It Works</button>
-            <button onClick={() => scrollToSection('testimonials')} className="text-gray-600 hover:text-indigo-600">Testimonials</button>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-indigo-600">Contact</button>
+   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div className="flex justify-between h-16">
+    <div className="flex items-center">
+      <Link to="/" className="flex items-center group">
+        <Brain className="h-8 w-8 text-indigo-600 transition-transform duration-300 group-hover:scale-110" />
+        <span className="ml-2 text-xl font-bold text-gray-900 transition-transform duration-300 group-hover:scale-110">
+          MindfulStudent
+        </span>
+      </Link>
+      </div>
+        <div className="hidden md:flex items-center space-x-8">
+          <button 
+            onClick={() => scrollToSection('features')} 
+            className="text-gray-600 hover:text-indigo-600 relative group"
+          >
+            Features
+            <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+          </button>
+          <button 
+            onClick={() => scrollToSection('how-it-works')} 
+            className="text-gray-600 hover:text-indigo-600 relative group"
+          >
+            How It Works
+            <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+          </button>
+          <button 
+            onClick={() => scrollToSection('testimonials')} 
+            className="text-gray-600 hover:text-indigo-600 relative group"
+          >
+            Testimonials
+            <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+          </button>
+          <button 
+            onClick={() => scrollToSection('contact')} 
+            className="text-gray-600 hover:text-indigo-600 relative group"
+          >
+            Contact
+            <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+          </button>
+          <button 
+            onClick={() => scrollToSection('features')} 
+            className="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700"
+          >
+            Get Started
+          </button>
+        </div>
+        <div className="md:hidden flex items-center">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600">
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+      </div>
+      {isOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1">
             <button 
               onClick={() => scrollToSection('features')} 
-              className="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700"
+              className="block w-full text-left px-3 py-2 text-gray-600 hover:text-indigo-600 relative group"
+            >
+              Features
+              <span className="absolute bottom-0 left-3 h-0.5 w-0 bg-indigo-600 transition-all duration-300 group-hover:w-20"></span>
+            </button>
+            <button 
+              onClick={() => scrollToSection('how-it-works')} 
+              className="block w-full text-left px-3 py-2 text-gray-600 hover:text-indigo-600 relative group"
+            >
+              How It Works
+              <span className="absolute bottom-0 left-3 h-0.5 w-0 bg-indigo-600 transition-all duration-300 group-hover:w-24"></span>
+            </button>
+            <button 
+              onClick={() => scrollToSection('testimonials')} 
+              className="block w-full text-left px-3 py-2 text-gray-600 hover:text-indigo-600 relative group"
+            >
+              Testimonials
+              <span className="absolute bottom-0 left-3 h-0.5 w-0 bg-indigo-600 transition-all duration-300 group-hover:w-24"></span>
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')} 
+              className="block w-full text-left px-3 py-2 text-gray-600 hover:text-indigo-600 relative group"
+            >
+              Contact
+              <span className="absolute bottom-0 left-3 h-0.5 w-0 bg-indigo-600 transition-all duration-300 group-hover:w-16"></span>
+            </button>
+            <button 
+              onClick={() => scrollToSection('features')} 
+              className="w-full text-center bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700"
             >
               Get Started
             </button>
           </div>
-          <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600">
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
         </div>
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <button onClick={() => scrollToSection('features')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-indigo-600">Features</button>
-              <button onClick={() => scrollToSection('how-it-works')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-indigo-600">How It Works</button>
-              <button onClick={() => scrollToSection('testimonials')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-indigo-600">Testimonials</button>
-              <button onClick={() => scrollToSection('contact')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-indigo-600">Contact</button>
-              <button 
-                onClick={() => scrollToSection('features')} 
-                className="w-full text-center bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700"
-              >
-                Get Started
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-    </nav>
+      )}
+    </div>
+  </nav>
   );
 }
 
@@ -105,15 +156,25 @@ function FeatureCard({ icon: Icon, title, description, to }: { icon: React.Eleme
   const navigate = useNavigate();
 
   return (
-    <div 
-      className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+    <div
+      className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-transform duration-300 cursor-pointer transform hover:-translate-y-2 hover:scale-105"
       onClick={() => navigate(to)}
+      style={{
+        perspective: '1000px',
+      }}
     >
-      <div className="flex items-center justify-center w-12 h-12 bg-indigo-100 rounded-full mb-4">
-        <Icon className="w-6 h-6 text-indigo-600" />
+      <div
+        className="flex flex-col items-center justify-center w-full h-full"
+        style={{
+          transformStyle: 'preserve-3d',
+        }}
+      >
+        <div className="flex items-center justify-center w-12 h-12 bg-indigo-100 rounded-full mb-4">
+          <Icon className="w-6 h-6 text-indigo-600" />
+        </div>
+        <h3 className="text-xl font-semibold mb-2 text-gray-800">{title}</h3>
+        <p className="text-gray-600">{description}</p>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-gray-800">{title}</h3>
-      <p className="text-gray-600">{description}</p>
     </div>
   );
 }
@@ -121,11 +182,17 @@ function FeatureCard({ icon: Icon, title, description, to }: { icon: React.Eleme
 function HowItWorksStep({ number, title, description }: { number: number, title: string, description: string }) {
   return (
     <div className="flex items-start space-x-4">
-      <div className="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+      <div
+        className="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold transition-transform duration-300 hover:rotate-12 hover:scale-110"
+      >
         {number}
       </div>
       <div>
-        <h3 className="text-lg font-semibold mb-2">{title}</h3>
+        <h3
+          className="text-lg font-semibold mb-2 transition-transform duration-300 hover:scale-110 hover:translate-x-4"
+        >
+          {title}
+        </h3>
         <p className="text-gray-600">{description}</p>
       </div>
     </div>
@@ -134,7 +201,7 @@ function HowItWorksStep({ number, title, description }: { number: number, title:
 
 function TestimonialCard({ name, role, quote, image }: { name: string, role: string, quote: string, image: string }) {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-lg">
+    <div className="bg-white p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-indigo-50">
       <div className="flex items-center mb-4">
         <img src={image} alt={name} className="w-12 h-12 rounded-full object-cover" />
         <div className="ml-4">
@@ -192,34 +259,46 @@ function Home() {
               Get personalized support exactly when you need it.
             </p>
             <div className="flex justify-center space-x-4">
-              <button 
-                onClick={scrollToFeatures}
-                className="bg-white text-indigo-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-indigo-50 transition-colors duration-300"
-              >
-                Start Free Trial
-              </button>
-              <button 
-                onClick={() => navigate('/learn-more')}
-                className="border-2 border-white text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-indigo-600 transition-colors duration-300"
-              >
-                Learn More
-              </button>
-            </div>
+  <button 
+    onClick={scrollToFeatures}
+    className="bg-white text-indigo-600 px-8 py-3 rounded-full text-lg font-semibold transition-all duration-500 overflow-hidden"
+  >
+    <span className="inline-block relative transition-all duration-500 hover:pr-6">
+      Start Free Trial
+      <span className="absolute opacity-0 top-0 right-[-20px] transition-all duration-500 hover:opacity-100 hover:right-0 text-indigo-500">&#187;</span>
+    </span>
+  </button>
+  <button 
+    onClick={() => navigate('/learn-more')}
+    className="border-2 border-white text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-indigo-600 transition-all duration-500 overflow-hidden"
+  >
+    <span className="inline-block relative transition-all duration-500 hover:pr-6">
+      Learn More
+      <span className="absolute opacity-0 top-0 right-[-20px] transition-all duration-500 hover:opacity-100 hover:right-0">&#187;</span>
+    </span>
+  </button>
+</div>
           </div>
         </div>
       </div>
 
       {/* Features Grid */}
+      
       <div id="features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Features Designed for Your Well-being</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 relative group">
+            <span className="inline-block relative">
+              Features Designed for Your Well-being
+              <span className="absolute top-11 left-0 w-0 h-0.5  bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+            </span>
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Every feature is thoughtfully crafted to support your mental health journey and academic success.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <FeatureCard
-            icon={Brain}
+            icon={BrainCog }
             title="AI-Powered Stress Tracking"
             description="Advanced AI analysis of your stress patterns with personalized wellness recommendations."
             to="/features/ai-stress-tracking"
@@ -261,7 +340,12 @@ function Home() {
       <div id="how-it-works" className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">How Our Platform Works</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 relative group">
+              <span className="inline-block relative">
+                How Our Platform Works
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+              </span>
+            </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Our AI-powered platform provides comprehensive mental health support through an intuitive step-by-step process.
             </p>
@@ -299,32 +383,30 @@ function Home() {
                 description="Join our moderated community platform to connect with peers, share experiences, and build a support network."
               />
             </div>
-            <div className="relative space-y-6">
+            <div className="relative group w-full h-96 overflow-hidden rounded-xl shadow-lg">
+              {/* Image */}
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
                 alt="Students using the platform"
-                className="rounded-xl shadow-lg object-cover mb-6"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="bg-white p-6 rounded-xl shadow-lg">
-                <h3 className="text-xl font-semibold mb-4 text-indigo-600">Why This Approach Works</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-indigo-600 mr-2 flex-shrink-0 mt-1" />
-                    <p className="text-gray-600">Combines AI technology with proven mental health practices</p>
-                  </li>
-                  <li className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-indigo-600 mr-2 flex-shrink-0 mt-1" />
-                    <p className="text-gray-600">Provides personalized support based on individual needs</p>
-                  </li>
-                  <li className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-indigo-600 mr-2 flex-shrink-0 mt-1" />
-                    <p className="text-gray-600">Offers continuous support through multiple channels</p>
-                  </li>
-                  <li className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-indigo-600 mr-2 flex-shrink-0 mt-1" />
-                    <p className="text-gray-600">Creates a balanced approach to academic success and mental wellness</p>
-                  </li>
-                </ul>
+
+              {/* Overlay Content */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                <div className="space-y-3 bg-white bg-opacity-90 p-4 rounded-lg shadow-md">
+                  <p className="text-gray-600">
+                    Combines AI technology with proven mental health practices
+                  </p>
+                  <p className="text-gray-600">
+                    Provides personalized support based on individual needs
+                  </p>
+                  <p className="text-gray-600">
+                    Offers continuous support through multiple channels
+                  </p>
+                  <p className="text-gray-600">
+                    Creates a balanced approach to academic success and mental wellness
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -335,7 +417,12 @@ function Home() {
       <div id="testimonials" className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">What Students Say</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 relative group">
+              <span className="inline-block relative">
+                What Students Say
+                <span className="absolute top-10 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+              </span>
+            </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Hear from students who've transformed their mental well-being with our platform.
             </p>
@@ -368,7 +455,9 @@ function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4 transition-transform duration-300 hover:scale-105 hover:text-indigo-600">
+                Get in Touch
+              </h2>
               <p className="text-xl text-gray-600 mb-8">
                 Have questions about our platform? We're here to help you on your mental wellness journey.
               </p>
