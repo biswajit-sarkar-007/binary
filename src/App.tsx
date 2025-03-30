@@ -578,6 +578,8 @@ function App() {
         <Route path="/features/study-scheduler" element={<StudyBreakScheduler />} />
         <Route path="/features/guided-wellness/*" element={<GuidedWellness />} />
         <Route path="/features/community-support" element={<CommunitySupport />} />
+        <Route path="/features/game" element={<iframe src="/detoxing_media/game.html" style={{ width: '100%', height: '100vh', border: 'none' }} title="Game" />} />
+
       </Routes>
     </Router>
   );

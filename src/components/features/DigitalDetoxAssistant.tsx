@@ -1,5 +1,6 @@
 import React from 'react';
 import { Activity } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const DigitalDetoxAssistant = () => {
   return (
@@ -54,9 +55,18 @@ const DigitalDetoxAssistant = () => {
             </ul>
           </div>
         </div>
+
+        {/* New Button to Navigate to Game */}
+        <div className="text-center mt-8">
+          <Link to="/features/game">
+            <button className="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700">
+              Play Game
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
 
-export default DigitalDetoxAssistant; 
+export default DigitalDetoxAssistant;
