@@ -2,7 +2,7 @@
 /* General Body Styling */
 *{ font-family: "Winky Sans", sans-serif;}
 body {
-    font-family: 'Poppins', sans-serif;
+
     background: #1a1d2b;
     color: #fff;
     margin: 0;
@@ -48,7 +48,7 @@ body {
     width: 90%;
     max-width: 1200px;
     justify-content: space-between;
-    gap: 90px;
+    gap: 30px;
 }
 
 /* Sidebar (Profile & Quests) */
@@ -170,7 +170,7 @@ body {
     text-align: center;
     font-size: 22px;
     margin-bottom: 18px;
-    color: #ffcc00;
+    color: #ab4bf4;
 }
 
 /* Rank Styling */
@@ -193,7 +193,7 @@ body {
 .rank-number {
     font-size: 20px;
     font-weight: bold;
-    color: #ffd500;
+    color:  #114993;
     margin-right: 12px;
 }
 
@@ -201,7 +201,7 @@ body {
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    border: 3px solid #ffcc00;
+    border: 3px solid #114993;
     margin-right: 12px;
     transition: transform 0.3s ease;
 }
@@ -226,7 +226,7 @@ body {
 
 .rank-level {
     font-size: 16px;
-    color: #ffcc00;
+    color: #610fae;
 }
 
 /* Detox Games Section */
@@ -239,16 +239,20 @@ body {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+/* Existing hover effects for the container */
 .detox-games:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(45, 142, 233, 0.545);
 }
-
+/* Modified h3 styles for typing effect */
 .detox-games h3 {
     font-size: 22px;
-    color: #ffcc00;
+    color: #914bf4;
     margin-bottom: 18px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: fit-content;
 }
 
 .game {
@@ -267,7 +271,7 @@ body {
 
 .game h4 {
     font-size: 20px;
-    color: #ffcc00;
+    color: #0918e7;
     margin-bottom: 8px;
 }
 
@@ -310,7 +314,7 @@ body {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #ffcc00;
+    background-color: #1c81ed;
     transform-origin: bottom right;
     transition: transform 0.3s ease-out;
 }
@@ -323,7 +327,7 @@ body {
 }
 /* Border Effect for Username Input */
 .username {
-    border: black solid ;
+    border: #ab4bf4 solid ;
     border-radius: 5px;
     padding: 5px;
     transition: border-color 0.3s ease;
@@ -331,7 +335,7 @@ body {
 
 .username:hover,
 .username:focus {
-    border-color: #aeff00;
+    border-color: #001eff;
     outline: none;
 }
 
