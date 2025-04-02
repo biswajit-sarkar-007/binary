@@ -31,5 +31,7 @@ Contributions are welcome! Please follow these steps to contribute:
 4. Build the project for production with `npm run build`.
 
 
+## Demo 
+
 ## Solution
 This project aims to provide a web application that offers various features such as stress detection, meditation guidance, and personalized recommendations to support mental health.
