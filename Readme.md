@@ -1,5 +1,5 @@
 # MindfulStudent
-
+ 
 ## Description
 MindfulStudent is an AI-powered mental health support platform designed to help students manage their mental well-being. It offers various features such as stress tracking, digital detox assistance, community support, and guided wellness activities.
 
