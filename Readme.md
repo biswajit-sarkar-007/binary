@@ -35,3 +35,6 @@ Contributions are welcome! Please follow these steps to contribute:
 
 ## Solution
 This project aims to provide a web application that offers various features such as stress detection, meditation guidance, and personalized recommendations to support mental health.
+
+
+the website is on working ....some features and the deplyment of this webiste will be done very soon....
