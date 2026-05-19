@@ -21,6 +21,9 @@ export declare class Template {
      */
     constructor(template: string);
     render(items?: Record<string, unknown>): string;
+    format(options?: {
+        indent: string | number;
+    }): string;
 }
 export { Environment, Interpreter, tokenize, parse };
 //# sourceMappingURL=index.d.ts.map
