@@ -54,6 +54,7 @@ function OneOf(name, fieldNames, options, comment) {
  * @interface IOneOf
  * @property {Array.<string>} oneof Oneof field names
  * @property {Object.<string,*>} [options] Oneof options
+ * @property {string|null} [comment] Oneof comment
  */
 
 /**
@@ -172,12 +173,32 @@ OneOf.prototype.onRemove = function onRemove(parent) {
 };
 
 /**
+ * Determines whether this field corresponds to a synthetic oneof created for
+ * a proto3 optional field.  No behavioral logic should depend on this, but it
+ * can be relevant for reflection.
+ * @name OneOf#isProto3Optional
+ * @type {boolean}
+ * @readonly
+ */
+Object.defineProperty(OneOf.prototype, "isProto3Optional", {
+    get: function() {
+        if (this.fieldsArray == null || this.fieldsArray.length !== 1) {
+            return false;
+        }
+
+        var field = this.fieldsArray[0];
+        return field.options != null && field.options["proto3_optional"] === true;
+    }
+});
+
+/**
  * Decorator function as returned by {@link OneOf.d} (TypeScript).
  * @typedef OneOfDecorator
  * @type {function}
  * @param {Object} prototype Target prototype
  * @param {string} oneofName OneOf name
  * @returns {undefined}
+ * @deprecated Legacy TypeScript decorator support. Will be removed in a future release.
  */
 
 /**
@@ -186,6 +207,7 @@ OneOf.prototype.onRemove = function onRemove(parent) {
  * @param {...string} fieldNames Field names
  * @returns {OneOfDecorator} Decorator function
  * @template T extends string
+ * @deprecated Legacy TypeScript decorator support. Will be removed in a future release.
  */
 OneOf.d = function decorateOneOf() {
     var fieldNames = new Array(arguments.length),
